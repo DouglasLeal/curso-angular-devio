@@ -10,6 +10,8 @@ import { ContatoComponent } from './contato/contato.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ListaProdutoComponent } from './produtos/lista-produto/lista-produto.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { FormsModule } from '@angular/forms';
     NavbarComponent,
     ContatoComponent,
     SobreComponent,
-    DatabindingComponent
+    DatabindingComponent,
+    ListaProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
