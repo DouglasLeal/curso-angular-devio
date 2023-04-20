@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContatoComponent } from './contato/contato.component';
 import { SobreComponent } from './sobre/sobre.component';
+import { DatabindingComponent } from './databinding/databinding.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SobreComponent } from './sobre/sobre.component';
     FooterComponent,
     NavbarComponent,
     ContatoComponent,
-    SobreComponent
+    SobreComponent,
+    DatabindingComponent
   ],
   imports: [
     BrowserModule,
