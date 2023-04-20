@@ -1,1 +1,45 @@
-<p>databinding works!</p>
+<div class="container">
+    <h3>Interpolation</h3>
+    <p>Número de cliques: {{cliques}}</p>
+
+    <p [ngClass]="{
+        'text-secondary':cliques < 3,
+        'text-success':cliques >= 3,
+        'text-warning':cliques >= 5,
+        'text-danger':cliques >= 9,
+    }">Número de cliques: {{cliques}}</p>
+
+    <hr>
+    <h3>Property Binding</h3>
+    <button class="btn btn-info" [disabled]="cliques >= 10">Info</button>
+    <br><br>
+    <img width="100px" [src]="urlImagem" alt="">
+
+    <hr>
+    <h3>Event Binding</h3>
+    <div class="d-flex align-items-center">
+        <button class="btn btn-warning mx-3" (click)="clicar(-1)">-1</button>
+        <span style="font-size: 75px">{{cliques}}</span>
+        <button class="btn btn-warning mx-3" (click)="clicar(1)">+1</button>
+    </div>
+    <button (click)="zerarCliques()" class="btn btn-secondary" [disabled]="cliques < 10">Zerar Cliques</button>
+
+    <hr>
+    <h3>Two-way Binding</h3>
+
+    <input type="text" (keyup)="keyUpEvent($event)" placeholder="Digite seu nome...">
+    <br>
+    <label >Seu nome é: {{nome}}</label>
+
+    <br><br>
+
+    <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" placeholder="Digite seu nome...">
+    <br>
+    <label >Seu nome é: {{nome}}</label>
+
+    <br><br>
+
+    <input type="text" [(ngModel)]="nome" placeholder="Digite seu nome...">
+    <br>
+    <label [ngClass]="nome">Seu nome é: {{nome}}</label>
+</div>
